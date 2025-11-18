@@ -22,6 +22,6 @@ builder:
           name: ZAIDGLPAD
           description: NEW AIDG LAUNCHPAD
           package: zqu-dg-fnd
-          transport: S4PK900125
+          transport: DS4K906328
         exclude:
           - /test/
