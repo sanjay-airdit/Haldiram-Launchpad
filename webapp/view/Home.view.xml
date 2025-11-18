@@ -20,6 +20,7 @@
 						<BadgeCustomData key="badge" value="{NotificationModel>/count}"/>
 					</customData>
 				</Button>
+				<Label design="Bold" text="{profileModel>/name}"/>
 				<OverflowToolbarButton icon="sap-icon://customer"  type="Transparent" iconDensityAware="false" tooltip="User Profile" text="User Profile" press="onPressUserProfile">
 					<dependents>
 						<core:Fragment fragmentName="customflp.launchpad.fragment.UserProfile" type="XML"/>
