@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: customflp.launchpad
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        log: 5
+        target:
+          destination: haldiram
+          url: http://vhhdnds4ci.sap.haldiram.com:44300
+          client: '110'
+        app:
+          name: ZAIDGLPAD
+          description: NEW AIDG LAUNCHPAD
+          package: zqu-dg-fnd
+          transport: S4PK900125
+        exclude:
+          - /test/

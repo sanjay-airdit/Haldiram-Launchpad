@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+        <edmx:Include Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zp_qu_dg_mytask_srd" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="zi_qudg_requstpriority_vhType" sap:label="Value help : Request priority" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="domname"/>
+                    <PropertyRef Name="domvalue_l"/>
+                </Key>
+                <Property Name="domname" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Domain name"/>
+                <Property Name="domvalue_l" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="Ddtext" sap:label="Request Priority" sap:quickinfo="Values for Domains: Single Value/Lower Limit"/>
+                <Property Name="Ddtext" Type="Edm.String" MaxLength="60" sap:label="Description" sap:quickinfo="Short Text for Fixed Values"/>
+            </EntityType>
+            <EntityType Name="ZI_QU_DG_RejctionVHType" sap:label="Rejection Value Help" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="iv_reqid"/>
+                    <PropertyRef Name="iv_sequence"/>
+                    <PropertyRef Name="step"/>
+                </Key>
+                <Property Name="iv_reqid" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Material Request Id"/>
+                <Property Name="iv_sequence" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Step Sequence"/>
+                <Property Name="step" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Step Sequence"/>
+                <Property Name="step_name" Type="Edm.String" MaxLength="30" sap:label="Step Name"/>
+                <NavigationProperty Name="Parameters" Relationship="cds_zp_qu_dg_mytask_srd.assoc_ABC15EC6AF79FDAB943A1F035E104CCA" FromRole="ToRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA" ToRole="FromRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZI_QU_DG_RejctionVHParameters" sap:semantics="parameters" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="iv_reqid"/>
+                    <PropertyRef Name="iv_sequence"/>
+                </Key>
+                <Property Name="iv_reqid" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:parameter="mandatory" sap:label="Material Request Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="iv_sequence" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:parameter="mandatory" sap:label="Step Sequence" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Set" Relationship="cds_zp_qu_dg_mytask_srd.assoc_ABC15EC6AF79FDAB943A1F035E104CCA" FromRole="FromRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA" ToRole="ToRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA"/>
+            </EntityType>
+            <EntityType Name="ZP_QU_DG_MYTASKType" sap:label="My Task" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="WorkItem_ID"/>
+                </Key>
+                <Property Name="WorkItem_ID" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="NonNegative" sap:label="Work Item ID" sap:quickinfo="Work item ID"/>
+                <Property Name="WorkItem_text" Type="Edm.String" MaxLength="120" sap:label="Work item text"/>
+                <Property Name="WorkItem_Type" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Type" sap:quickinfo="Work item type"/>
+                <Property Name="TypeDescription" Type="Edm.String" MaxLength="60" sap:label="Short Description" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="WorkItem_Priority" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Priority" sap:quickinfo="Priority of a Work Item"/>
+                <Property Name="Priority_Description" Type="Edm.String" MaxLength="60" sap:label="Short Description" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="Creator_WorkItem" Type="Edm.String" MaxLength="90" sap:label="Creator" sap:quickinfo="Creator of a work item"/>
+                <Property Name="Creation_Date_WorkItem" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Creation Date" sap:quickinfo="Creation Date of Work Item"/>
+                <Property Name="Creation_Time_WorkItem" Type="Edm.Time" Precision="0" sap:label="Creation Time" sap:quickinfo="Creation Time of Work Item"/>
+                <Property Name="WorkItem_DueDtae" Type="Edm.DateTimeOffset" Precision="7" sap:label="Due Date" sap:quickinfo="Latest End Time for Work Item"/>
+                <Property Name="WorkItem_Status" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Status" sap:quickinfo="Processing Status of a Work Item"/>
+                <Property Name="Status_Description" Type="Edm.String" MaxLength="60" sap:label="Short Description" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="Technical_WorkFlow_Object" Type="Edm.String" MaxLength="20" sap:label="Request Id"/>
+                <Property Name="Task_Id" Type="Edm.String" MaxLength="14" sap:display-format="UpperCase" sap:label="Task" sap:quickinfo="Task ID"/>
+                <Property Name="workFlowTaskDefination" Type="Edm.String" MaxLength="14" sap:display-format="UpperCase" sap:label="Top-Level Task" sap:quickinfo="Task Identifier of Top-Level Task"/>
+                <Property Name="workFlowTaskDefName" Type="Edm.String" MaxLength="40" sap:label="Object name" sap:quickinfo="Object Name"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="TopLevelWorkflowTask" Type="Edm.String" MaxLength="12" sap:display-format="NonNegative" sap:label="Top Level Workflow" sap:quickinfo="Workflow: Unique ID of Top-Level Instance (6.1/get)"/>
+                <Property Name="ObjectNumber" Type="Edm.String" MaxLength="100"/>
+                <Property Name="reqtyp" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Request Type"/>
+                <Property Name="req_desc" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="Request Description" sap:quickinfo="Character 100"/>
+                <Property Name="reqprio" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:text="reqprioritydesc" sap:label="Request Priority" sap:quickinfo="Priority of a Work Item" sap:value-list="standard"/>
+                <Property Name="reqprioritydesc" Type="Edm.String" MaxLength="60" sap:label="Short Description" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="Master" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Masters" sap:heading=""/>
+                <Property Name="process_id" Type="Edm.String" MaxLength="32" sap:display-format="UpperCase" sap:label="Process ID"/>
+                <Property Name="CurrentSequence" Type="Edm.String" MaxLength="3"/>
+                <Property Name="req_created_by" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Name of Person Responsible for Creating the Object"/>
+                <Property Name="req_created_on" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On"/>
+                <Property Name="req_changed_by" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By" sap:quickinfo="Name of Person Who Changed Object"/>
+                <Property Name="req_changed_on" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Last Change" sap:quickinfo="Date of Last Change"/>
+                <Property Name="WorkflowTaskDefinitionObjType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Standard object type" sap:quickinfo="Standard Object Type"/>
+                <Property Name="WorkflowTaskDefinitionObject" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Object ID" sap:quickinfo="Object ID of Standard Object"/>
+                <Property Name="TopLevelWrkflwTskDefObjType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Standard object type" sap:quickinfo="Standard Object Type"/>
+                <Property Name="TopLevelWrkflwTskDefObject" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Object ID" sap:quickinfo="Object ID of Standard Object"/>
+                <Property Name="sequence" Type="Edm.String" MaxLength="5" sap:label="Current Step" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CurrencyCode"/>
+                </Key>
+                <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Short text"/>
+                <Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimals"/>
+            </EntityType>
+            <EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitCode"/>
+                </Key>
+                <Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Internal UoM" sap:semantics="unit-of-measure"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+                <Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Commercial"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Measurement Unit Txt"/>
+                <Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Decimal Places"/>
+            </EntityType>
+            <Association Name="assoc_ABC15EC6AF79FDAB943A1F035E104CCA" sap:content-version="1">
+                <End Type="cds_zp_qu_dg_mytask_srd.ZI_QU_DG_RejctionVHParameters" Multiplicity="1" Role="FromRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA"/>
+                <End Type="cds_zp_qu_dg_mytask_srd.ZI_QU_DG_RejctionVHType" Multiplicity="*" Role="ToRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA"/>
+            </Association>
+            <EntityContainer Name="cds_zp_qu_dg_mytask_srd_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SAP__Currencies" EntityType="cds_zp_qu_dg_mytask_srd.SAP__Currency" sap:content-version="1"/>
+                <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zp_qu_dg_mytask_srd.SAP__UnitOfMeasure" sap:content-version="1"/>
+                <EntitySet Name="zi_qudg_requstpriority_vh" EntityType="cds_zp_qu_dg_mytask_srd.zi_qudg_requstpriority_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_QU_DG_RejctionVHSet" EntityType="cds_zp_qu_dg_mytask_srd.ZI_QU_DG_RejctionVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_QU_DG_RejctionVH" EntityType="cds_zp_qu_dg_mytask_srd.ZI_QU_DG_RejctionVHParameters" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZP_QU_DG_MYTASK" EntityType="cds_zp_qu_dg_mytask_srd.ZP_QU_DG_MYTASKType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_ABC15EC6AF79FDAB943A1F035E104CCA" Association="cds_zp_qu_dg_mytask_srd.assoc_ABC15EC6AF79FDAB943A1F035E104CCA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZI_QU_DG_RejctionVH" Role="FromRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA"/>
+                    <End EntitySet="ZI_QU_DG_RejctionVHSet" Role="ToRole_assoc_ABC15EC6AF79FDAB943A1F035E104CCA"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.ZP_QU_DG_MYTASKType/reqprio" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Priority"/>
+                        <PropertyValue Property="CollectionPath" String="zi_qudg_requstpriority_vh"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="reqprio"/>
+                                    <PropertyValue Property="ValueListProperty" String="domvalue_l"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Ddtext"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.cds_zp_qu_dg_mytask_srd_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.cds_zp_qu_dg_mytask_srd_Entities/ZI_QU_DG_RejctionVH" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>iv_reqid</PropertyPath>
+                                <PropertyPath>iv_sequence</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>iv_reqid</PropertyPath>
+                                <PropertyPath>iv_sequence</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.cds_zp_qu_dg_mytask_srd_Entities/ZP_QU_DG_MYTASK" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>sequence</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>sequence</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.cds_zp_qu_dg_mytask_srd_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.SAP__Currency/CurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+            </Annotations>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.SAP__UnitOfMeasure/UnitCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+                <Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/>
+            </Annotations>
+            <Annotations Target="cds_zp_qu_dg_mytask_srd.SAP__UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.AlternateKeys">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Key">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="Name" Path="ExternalCode"/>
+                                        <PropertyValue Property="Alias" String="ExternalCode"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://vhhdnds4ci.sap.haldiram.com:44300/sap/opu/odata/sap/ZP_QU_DG_MYTASK_BND/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://vhhdnds4ci.sap.haldiram.com:44300/sap/opu/odata/sap/ZP_QU_DG_MYTASK_BND/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,59 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog title="Notifications" showHeader="true" draggable="true" resizable="true" contentWidth="75%" contentHeight="80%" id="notificationPopup" class="customDialog" verticalScrolling="false">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Title text="Notifications"/>
+				</contentLeft>
+				<contentRight>
+					<OverflowToolbarButton icon="sap-icon://clear-all" type="Default" iconDensityAware="false" tooltip="Clear All Notifications" press="onDeleteAllNotifications"/>
+					<OverflowToolbarButton icon="sap-icon://decline" type="Reject" iconDensityAware="false" tooltip="Close notofication" press="onCloseNotification"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<IconTabBar id="idNotificationIconTabBar" stretchContentHeight="true" backgroundDesign="Transparent" applyContentPadding="false" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding" select="">
+				<items>
+					<IconTabFilter text="All" key="All">
+						<ScrollContainer height="100%" width="100%" horizontal="false" vertical="true">
+							<NotificationList items="{NotificationModel>/data}">
+								<NotificationListItem  title="{NotificationModel>header_text}" description="{NotificationModel>body_text}" showCloseButton="true" unread="true" priority="{ path: 'NotificationModel>priority', formatter: '.formatter.priorityFormatter' }" close="onDeleteNotificationItem"  datetime="{ parts: [{ path: 'NotificationModel>qmdat' }, { path: 'NotificationModel>mzeit' }], formatter: '.formatter.dateTimeFormatter'}" press="onPressNotificationItem" authorName="{NotificationModel>user_id}" authorInitials="{ path: 'NotificationModel>user_id', formatter: '.formatter.authorInitials' }" authorAvatarColor="Accent8" hideShowMoreButton="true">
+									<!-- <buttons>
+										<Button text="{text}" press=".onItemButtonPress"/>
+									</buttons> -->
+								</NotificationListItem>
+							</NotificationList>
+						</ScrollContainer>
+					</IconTabFilter>
+					<IconTabFilter text="By Priority" key="P">
+						<ScrollContainer height="100%" width="100%" horizontal="false" vertical="true">
+							<NotificationList  items="{NotificationModel>/data}">
+								<NotificationListItem  title="{NotificationModel>header_text}" description="{NotificationModel>body_text}" showCloseButton="true" unread="true" priority="{ path: 'NotificationModel>priority', formatter: '.formatter.priorityFormatter' }" close="onDeleteNotificationItem"  datetime="{ parts: [{ path: 'NotificationModel>qmdat' }, { path: 'NotificationModel>mzeit' }], formatter: '.formatter.dateTimeFormatter'}" press="onPressNotificationItem" authorName="{NotificationModel>user_id}" authorInitials="{ path: 'NotificationModel>user_id', formatter: '.formatter.authorInitials' }" authorAvatarColor="Accent8" hideShowMoreButton="true">
+									<!-- <buttons>
+										<Button text="i am Button" press=".onItemButtonPress"/>
+									</buttons> -->
+								</NotificationListItem>
+							</NotificationList>
+						</ScrollContainer>
+					</IconTabFilter>
+					<IconTabFilter text="By Date" key="D">
+						<ScrollContainer height="100%" width="100%" horizontal="false" vertical="true">
+							<NotificationList items="{ path: 'NotificationModel>/groupByDate', sorter: { path: 'qmdat', descending: true}}">
+								<NotificationListGroup title="{NotificationModel>key}" datetime="{NotificationModel>key}" items="{NotificationModel>items}" showCloseButton="false">
+									<NotificationListItem  title="{NotificationModel>header_text}" description="{NotificationModel>body_text}" showCloseButton="true" unread="true" priority="{ path: 'NotificationModel>priority', formatter: '.formatter.priorityFormatter' }" close="onDeleteNotificationItem"  datetime="{ parts: [{ path: 'NotificationModel>qmdat' }, { path: 'NotificationModel>mzeit' }], formatter: '.formatter.dateTimeFormatter'}" press="onPressNotificationItem" authorName="{NotificationModel>user_id}" authorInitials="{ path: 'NotificationModel>user_id', formatter: '.formatter.authorInitials' }" authorAvatarColor="Accent8" hideShowMoreButton="true">
+										<!-- <buttons>
+											<Button text="{NotificationModel>buttons/text}" press=".onItemButtonPress"/>
+										</buttons> -->
+									</NotificationListItem>
+								</NotificationListGroup>
+							</NotificationList>
+						</ScrollContainer>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

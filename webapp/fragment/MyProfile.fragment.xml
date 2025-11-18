@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core">
+	<Dialog title="My Profile" showHeader="false" draggable="true" resizable= "true" >
+		<content>
+			<VBox alignItems="Center" class="sapUiTinyMarginTop">
+				<Avatar src="{profileModel>/img}" displaySize="XL" showBorder="true"/>
+				<Title text="{profileModel>/name}" class="sapUiSmallMarginTop"/>
+			</VBox>
+			<VBox >
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+					adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+					singleContainerFullSize="false">
+					<f:content>
+						<Label text="Department Name"/>
+						<Input value="{profileModel>/department}" id="departid" enabled="false"/>
+						<Label text="Email"/>
+						<Input value="{profileModel>/INTERNET_USER}" id="Emailid" enabled="false"/>
+						<Label text="Mobile No"/>
+						<Input type="Number" value="{profileModel>/MOBILE}" id="phoneid" enabled="false"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<endButton>
+			<Button text="Close" type="Ghost" class="customSegmentedBtn" press="onCloseProfile"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,45 @@
+<mvc:View controllerName="customflp.launchpad.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+   <tnt:ToolPage id="toolpage">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<OverflowToolbarButton  icon="sap-icon://menu2" iconDensityAware="false" class="sapUiTinyMarginBegin customNavBtn" type="Transparent" press="onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</OverflowToolbarButton>
+
+				<Image src="{imageModel>/path}/images/AIDGBigSize.png" width='40px' height='40px' press="handleNavToHomePage" tooltip='Home'/>
+				<!-- <Button icon="sap-icon://home" press="handleNavToHomePage" type="Transparent"></Button> -->
+				<ToolbarSpacer/>				
+				<Button icon="sap-icon://bell" press="handlePressNotification" type="Transparent" tooltip="Notifications">
+					<customData>
+						<BadgeCustomData key="badge" value="{NotificationModel>/count}"/>
+					</customData>
+				</Button>
+				<OverflowToolbarButton icon="sap-icon://customer"  type="Transparent" iconDensityAware="false" tooltip="User Profile" text="User Profile" press="onPressUserProfile">
+					<dependents>
+						<core:Fragment fragmentName="customflp.launchpad.fragment.UserProfile" type="XML"/>
+					</dependents>
+				</OverflowToolbarButton>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent >
+			<tnt:SideNavigation  expanded="{= ${device>/system/phone} === true ? false : true}" itemSelect="onItemSelect">
+				<tnt:NavigationList items="{CatalogueTiles>/}" >
+					<tnt:NavigationListItem text="{CatalogueTiles>Catdesc}" key="{CatalogueTiles>ui5_component}" expanded="true" icon="{CatalogueTiles>icon}" items="{CatalogueTiles>tiles}">
+						<tnt:NavigationListItem text="{CatalogueTiles>display_title_text}" key="{CatalogueTiles>ui5_component}" icon="{CatalogueTiles>icon}"/>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents >
+			<NavContainer id="pageContainer" navigationFinished="onNavigationFinished" afterNavigate="" navigate="onNavigate">
+
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

@@ -1,0 +1,74 @@
+{
+	"Themes":[
+		{
+			"id" : "sap_horizon",
+			"Name":"Morning Horizon",
+			"info": "Selected"
+		},
+		{
+			"id" : "sap_horizon_dark",
+			"Name":"Evening Horizon",
+			"info": ""
+		},
+		{
+			"id" : "sap_horizon_hcb",
+			"Name":"High Contrast Black",
+			"info": ""
+		},
+		{
+			"id" : "sap_horizon_hcw",
+			"Name":"High Contrast White",
+			"info": ""
+		},
+		{
+			"id" : "sap_fiori_3",
+			"Name":"Quartz Light",
+			"info": ""
+		},
+		{
+			"id" : "sap_fiori_3_dark",
+			"Name":"Quartz Dark",
+			"info": ""
+		},
+		{
+			"id" : "sap_fiori_3_hcb",
+			"Name":"High Contrast Black",
+			"info": ""
+		},
+		{
+			"id" : "sap_fiori_3_hcw",
+			"Name":"High Contrast White",
+			"info": ""
+		},
+		{
+			"id" : "sap_belize",
+			"Name":"Belize",
+			"info": ""
+		},
+		{
+			"id" : "sap_belize_plus",
+			"Name":"Belize Deep",
+			"info": ""
+		},
+		{
+			"id" : "sap_belize_hcb",
+			"Name":"High Contrast Black",
+			"info": ""
+		},
+		{
+			"id" : "sap_belize_hcw",
+			"Name":"High Contrast White",
+			"info": ""
+		},
+		{
+			"id" : "sap_bluecrystal",
+			"Name":"Blue Crystal",
+			"info": ""
+		},
+		{
+			"id" : "sap_hcb",
+			"Name":"High Contrast Black",
+			"info": ""
+		}
+		]
+}

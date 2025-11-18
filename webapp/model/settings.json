@@ -1,0 +1,46 @@
+{
+	"settingnames": [
+		{
+			"title": "Appearence",
+			"desc": "Set Theme",
+			"image": "/images/theme.png",
+			"id": "_themes",
+			"selected": true,
+			"infoStateInverted": true,
+			"highlight": "Success",
+			"info": "",
+			"infoState": "None",
+			"iconDensityAware": false,
+			"iconInset": false,
+			"adaptTitleSize": false
+		},
+		{
+			"title": "Favourite",
+			"desc": "Favourite Selection",
+			"image": "/images/favorites.png",
+			"id": "_favourites",
+			"selected": false,
+			"infoStateInverted": true,
+			"highlight": "Success",
+			"info": "",
+			"infoState": "Error",
+			"iconDensityAware": false,
+			"iconInset": false,
+			"adaptTitleSize": false
+		},
+		{
+			"title": "Notification",
+			"desc": "Notification Settings",
+			"image": "/images/push.png",
+			"id": "_notifications",
+			"selected": false,
+			"infoStateInverted": true,
+			"highlight": "Success",
+			"info": "",
+			"infoState": "None",
+			"iconDensityAware": false,
+			"iconInset": false,
+			"adaptTitleSize": false
+		}
+	]
+}

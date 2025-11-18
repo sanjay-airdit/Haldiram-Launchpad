@@ -1,0 +1,193 @@
+{
+  "_version": "1.37.0",
+  "sap.app": {
+    "id": "customflp.launchpad",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.2",
+      "toolsId": "00a18fb3-31da-4303-87bd-4e904a100db7"
+    },
+    "dataSources": {
+      "ZC_QU_DG_CATALOG_CONFIG_CDS_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZC_QU_DG_CATALOG_CONFIG_CDS_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/ZC_QU_DG_CATALOG_CONFIG_CDS_VAN.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZC_QU_DG_CATALOG_CONFIG_CDS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZC_QU_DG_CATALOG_CONFIG_CDS_VAN"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZP_QU_DG_NOTIFICATION_BND_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZP_QU_DG_NOTIFICATION_BND_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/ZP_QU_DG_NOTIFICATION_BND/ZP_QU_DG_NOTIFICATION_BND_VAN.xml"
+        }
+      },
+      "ZP_QU_DG_NOTIFICATION_BND": {
+        "uri": "/sap/opu/odata/sap/ZP_QU_DG_NOTIFICATION_BND/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZP_QU_DG_NOTIFICATION_BND_VAN"
+          ],
+          "localUri": "localService/ZP_QU_DG_NOTIFICATION_BND/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZP_QU_DG_MYTASK_BND_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZP_QU_DG_MYTASK_BND_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/ZP_QU_DG_MYTASK_BND/ZP_QU_DG_MYTASK_BND_VAN.xml"
+        }
+      },
+      "ZP_QU_DG_MYTASK_BND": {
+        "uri": "/sap/opu/odata/sap/ZP_QU_DG_MYTASK_BND/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "ZP_QU_DG_MYTASK_BND_VAN"
+          ],
+          "localUri": "localService/ZP_QU_DG_MYTASK_BND/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "SETTINGDATA": {
+				"uri": "model/settings.json",
+				"type": "JSON"
+			},
+			"THEMEDATA": {
+				"uri": "model/Themes.json",
+				"type": "JSON"
+			}
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.96.37",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "customflp.launchpad.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "ZP_QU_DG_NOTIFICATION_BND": {
+        "dataSource": "ZP_QU_DG_NOTIFICATION_BND",
+        "preload": true,
+        "settings": {}
+      },
+      "ZP_QU_DG_MYTASK_BND": {
+        "dataSource": "ZP_QU_DG_MYTASK_BND",
+        "preload": true,
+        "settings": {}
+      },
+      "SETTINGDATA": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "SETTINGDATA"
+			},
+			"THEMEDATA": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "THEMEDATA"
+			}
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "customflp.launchpad.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": "",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "Application",
+          "pattern": "Application/{appId}",
+          "target": [
+            "TargetHome"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Home",
+          "viewName": "Home"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "customflp.launchpad.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
